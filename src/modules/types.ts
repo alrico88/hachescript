@@ -19,3 +19,14 @@ export function isString(element: string | string[]): boolean {
 export function isArray(element: string | string[]): boolean {
   return Array.isArray(element);
 }
+
+/**
+ * Checks if element is boolean
+ *
+ * @export
+ * @param {(string | string[] | number | boolean)} element Element to check
+ * @return {boolean}
+ */
+export function isBoolean(element: string | string[] | number | boolean): boolean {
+  return typeof element === 'boolean';
+}

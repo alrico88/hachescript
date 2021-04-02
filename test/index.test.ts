@@ -91,3 +91,12 @@ describe('Test styles parsing', () => {
     })).toBe('<div style="background-color: #ffffaa; border: 1px solid #ffffaa; text-transform: uppercase">hello world</div>');
   });
 });
+
+describe('Test attributes parsing', () => {
+  test('Boolean attributes should only have the attribute and no value', () => {
+    expect(h('option', 'hello world', {
+      checked: true,
+      value: 'hello',
+    })).toBe('<option checked value="hello">hello world</option>');
+  });
+});

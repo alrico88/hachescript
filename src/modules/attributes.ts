@@ -1,4 +1,5 @@
 import {paramCase} from 'change-case';
+import {isBoolean} from './types';
 
 export interface HTMLAttrs {
   [prop: string]: any;
@@ -9,7 +10,7 @@ export interface HTMLAttrs {
 
 interface HTMLAttrItem {
   name: string;
-  value: string | number;
+  value: string | number | boolean;
 }
 
 /**
@@ -29,7 +30,7 @@ export function populateAttributes(attributes: HTMLAttrs): string {
       styleAttrs.push(`${paramCase(prop)}: ${value}`);
     });
 
-    return `style="${styleAttrs.join('; ')}"`;
+    attributesStrings.push(`style="${styleAttrs.join('; ')}"`);
   }
 
   const attrsToOmit = ['id', 'class', 'style'];
@@ -48,8 +49,8 @@ export function populateAttributes(attributes: HTMLAttrs): string {
   }, initHTMLArray);
 
   attrsAsArray.forEach(({name, value}) => {
-    attributesStrings.push(`${name}="${value}"`);
+    attributesStrings.push(isBoolean(value) ? name : `${name}="${value}"`);
   });
 
-  return attributesStrings.join('; ');
+  return attributesStrings.join(' ');
 }
