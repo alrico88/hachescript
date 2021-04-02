@@ -1,0 +1,70 @@
+{
+  "version": "0.1.0",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "engines": {
+    "node": ">=10"
+  },
+  "scripts": {
+    "start": "tsdx watch",
+    "build": "tsdx build",
+    "test": "tsdx test",
+    "lint": "tsdx lint",
+    "prepare": "tsdx build",
+    "docs": "typedoc src/index.ts --readme",
+    "coveralls": "tsdx test --coverage && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js"
+  },
+  "peerDependencies": {},
+  "husky": {
+    "hooks": {
+      "pre-commit": "tsdx lint"
+    }
+  },
+  "prettier": {
+    "printWidth": 80,
+    "semi": true,
+    "singleQuote": true,
+    "trailingComma": "es5"
+  },
+  "name": "hachescript",
+  "description": "Create HTML strings using JavaScript, anywhere",
+  "author": "Alberto Rico",
+  "keywords": [
+    "HTML",
+    "string",
+    "selector"
+  ],
+  "module": "dist/hachescript.esm.js",
+  "size-limit": [
+    {
+      "path": "dist/hachescript.cjs.production.min.js",
+      "limit": "10 KB"
+    },
+    {
+      "path": "dist/hachescript.esm.js",
+      "limit": "10 KB"
+    }
+  ],
+  "repository": {
+    "url": "https://github.com/alrico88/hachescript"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^4.17.0",
+    "@typescript-eslint/parser": "^4.17.0",
+    "eslint": "^7.23.0",
+    "husky": "^6.0.0",
+    "tsdx": "^0.14.1",
+    "tslib": "^2.1.0",
+    "typedoc": "^0.20.34",
+    "typedoc-plugin-markdown": "^3.6.0",
+    "typescript": "^4.2.3"
+  },
+  "dependencies": {
+    "change-case": "^4.1.2"
+  }
+}
