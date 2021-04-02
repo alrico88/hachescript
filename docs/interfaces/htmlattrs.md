@@ -20,7 +20,7 @@
 
 • `Optional` **class**: *string* \| *string*[]
 
-Defined in: [modules/attributes.ts:7](https://github.com/alrico88/hachescript/blob/a6f6ad9/src/modules/attributes.ts#L7)
+Defined in: [modules/attributes.ts:7](https://github.com/alrico88/hachescript/blob/54209dc/src/modules/attributes.ts#L7)
 
 ___
 
@@ -28,7 +28,7 @@ ___
 
 • `Optional` **id**: *string*
 
-Defined in: [modules/attributes.ts:6](https://github.com/alrico88/hachescript/blob/a6f6ad9/src/modules/attributes.ts#L6)
+Defined in: [modules/attributes.ts:6](https://github.com/alrico88/hachescript/blob/54209dc/src/modules/attributes.ts#L6)
 
 ___
 
@@ -38,4 +38,4 @@ ___
 
 #### Type declaration:
 
-Defined in: [modules/attributes.ts:8](https://github.com/alrico88/hachescript/blob/a6f6ad9/src/modules/attributes.ts#L8)
+Defined in: [modules/attributes.ts:8](https://github.com/alrico88/hachescript/blob/54209dc/src/modules/attributes.ts#L8)

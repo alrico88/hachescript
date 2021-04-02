@@ -37,7 +37,7 @@ Name | Type | Description |
 
 The resulting HTML string
 
-Defined in: [index.ts:18](https://github.com/alrico88/hachescript/blob/a6f6ad9/src/index.ts#L18)
+Defined in: [index.ts:18](https://github.com/alrico88/hachescript/blob/54209dc/src/index.ts#L18)
 
 ___
 
@@ -58,4 +58,4 @@ Name | Type | Description |
 
 **Returns:** Selector
 
-Defined in: [modules/parser.ts:91](https://github.com/alrico88/hachescript/blob/a6f6ad9/src/modules/parser.ts#L91)
+Defined in: [modules/parser.ts:91](https://github.com/alrico88/hachescript/blob/54209dc/src/modules/parser.ts#L91)

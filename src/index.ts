@@ -1,6 +1,6 @@
 import {HTMLAttrs, populateAttributes} from './modules/attributes';
 import {populateClass} from './modules/classNames';
-import {preventSpaces} from './modules/format';
+import {formatContent, preventSpaces} from './modules/format';
 import {populateId} from './modules/id';
 import {parseSelector} from './modules/parser';
 import {isSelfClosingTag} from './modules/tags';
@@ -26,7 +26,9 @@ export function h(selector: string, content: string | string[], attributes: HTML
 
   const closeEndingTag = !isSelfClosing ? `</${tag}>` : '';
 
-  return `<${cleanMarkup}${closeBeginningTag}${content}${closeEndingTag}`;
+  const formattedContent = formatContent(content);
+
+  return `<${cleanMarkup}${closeBeginningTag}${formattedContent}${closeEndingTag}`;
 }
 
 export {parseSelector} from './modules/parser';

@@ -104,3 +104,17 @@ describe('Test attributes parsing', () => {
     expect(h('option', 'hello world')).toBe('<option>hello world</option>');
   });
 });
+
+describe('Test content parsing', () => {
+  test('String content should work as expected', () => {
+    expect(h('div', 'hello world')).toBe('<div>hello world</div>');
+  });
+
+  test('Array content should work as expected', () => {
+    expect(h('div', [h('img', '', {src: 'dog.png'}), h('img', '', {src: 'cat.png'})])).toBe('<div><img src="dog.png"/><img src="cat.png"/></div>');
+  });
+
+  test('Deep nesting should work as expected', () => {
+    expect(h('div', h('div', h('img', '', {src: 'cat.png'})))).toBe('<div><div><img src="cat.png"/></div></div>');
+  });
+});

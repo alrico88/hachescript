@@ -1,3 +1,5 @@
+import {isArray} from './types';
+
 /**
  * Only adds spaces if they're needed
  *
@@ -16,4 +18,21 @@ export function preventSpaces(elements: string[]): string {
 
     return agg;
   }, '');
+}
+
+/**
+ * Formats content to support both string and string arrays
+ *
+ * @export
+ * @param {(string | string[])} content The content
+ * @return {string} The resulting HTML
+ */
+export function formatContent(content: string | string[]): string {
+  if (isArray(content)) {
+    const casted = content as string[];
+
+    return casted.join('');
+  } else {
+    return content as string;
+  }
 }
