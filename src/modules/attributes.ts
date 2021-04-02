@@ -1,4 +1,4 @@
-import {paramCase} from 'change-case';
+import {paramCase} from 'param-case';
 import {isBoolean} from './types';
 
 export interface HTMLAttrs {
