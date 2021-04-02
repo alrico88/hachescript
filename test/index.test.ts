@@ -48,6 +48,15 @@ describe('Test selector parser classNames', () => {
     }).classNames).toStrictEqual(['text-muted', 'additionalClass']);
   });
 
+  test('If attributes contains a classes object, only those set to true should be added', () => {
+    expect(parseSelector(tagWithClass, {
+      class: {
+        active: true,
+        disabled: false,
+      },
+    }).classNames).toStrictEqual(['text-muted', 'active']);
+  });
+
   test('Passing the same class in selector and attributes should not create duplicate classNames', () => {
     expect(parseSelector(tagWithClass, {class: 'text-muted'}).classNames).toStrictEqual(['text-muted']);
   });

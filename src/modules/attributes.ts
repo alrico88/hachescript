@@ -4,7 +4,7 @@ import {isBoolean} from './types';
 export interface HTMLAttrs {
   [prop: string]: any;
   id?: string;
-  class?: string | string[];
+  class?: string | string[] | {[className: string]: boolean};
   style?: {[styleProp: string]: string | number};
 }
 

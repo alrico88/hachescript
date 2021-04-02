@@ -5,7 +5,7 @@
  * @param {(string | string[])} element Element to check
  * @return {boolean}
  */
-export function isString(element: string | string[]): boolean {
+export function isString(element: string | string[] | {[name: string]: any}): boolean {
   return typeof element === 'string';
 }
 
@@ -16,8 +16,19 @@ export function isString(element: string | string[]): boolean {
  * @param {(string | string[])} element Element to check
  * @return {boolean}
  */
-export function isArray(element: string | string[]): boolean {
+export function isArray(element: string | string[] | {[name: string]: any}): boolean {
   return Array.isArray(element);
+}
+
+/**
+ * Checks if element is object
+ *
+ * @export
+ * @param {(string | string[] | {[name: string]: any})} element Element to check
+ * @return {boolean}
+ */
+export function isObject(element: string | string[] | {[name: string]: any}): boolean {
+  return typeof element === 'object';
 }
 
 /**

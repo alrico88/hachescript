@@ -1,5 +1,5 @@
 import {HTMLAttrs} from './attributes';
-import {isArray, isString} from './types';
+import {isArray, isObject, isString} from './types';
 
 interface Selector {
   tag: string;
@@ -72,6 +72,12 @@ function parseClasses(selector: string, id?: string, attributes?: HTMLAttrs): st
       additionalClasses.push(attributes.class as string);
     } else if (isArray(attributes.class)) {
       additionalClasses.push(...attributes.class as string[]);
+    } else if (isObject(attributes.class)) {
+      Object.entries(attributes.class).forEach(([className, enabled]) => {
+        if (enabled === true) {
+          additionalClasses.push(className);
+        }
+      });
     }
   }
 
