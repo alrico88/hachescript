@@ -20,13 +20,13 @@ export function h(selector: string, content: string | string[], attributes: HTML
 
   const isSelfClosing = isSelfClosingTag(tag);
 
-  const cleanAttributes = preventSpaces([populateId(id), populateClass(classNames), populateAttributes(attributes)]);
+  const cleanMarkup = preventSpaces([tag, populateId(id), populateClass(classNames), populateAttributes(attributes)]);
 
   const closeBeginningTag = isSelfClosing ? '/>' : '>';
 
   const closeEndingTag = !isSelfClosing ? `</${tag}>` : '';
 
-  return `<${tag} ${cleanAttributes}${closeBeginningTag}${content}${closeEndingTag}`;
+  return `<${cleanMarkup}${closeBeginningTag}${content}${closeEndingTag}`;
 }
 
 export {parseSelector} from './modules/parser';

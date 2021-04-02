@@ -99,4 +99,8 @@ describe('Test attributes parsing', () => {
       value: 'hello',
     })).toBe('<option checked value="hello">hello world</option>');
   });
+
+  test('If no attributes are provided, parsing still works', () => {
+    expect(h('option', 'hello world')).toBe('<option>hello world</option>');
+  });
 });

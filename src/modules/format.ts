@@ -6,14 +6,13 @@
  * @return {string} The string without unneeded spaces
  */
 export function preventSpaces(elements: string[]): string {
-  const len = elements.length;
+  const elementsWithContent = elements.filter((d) => d !== '');
+  const len = elementsWithContent.length;
 
-  return elements.reduce((agg, element, index) => {
-    const isLastElement = index === len - 1;
+  return elementsWithContent.reduce((agg, element, index) => {
+    const doesNotNeedSpace = index === len - 1;
 
-    if (element !== '') {
-      agg += isLastElement ? element : `${element} `;
-    }
+    agg += doesNotNeedSpace ? element : `${element} `;
 
     return agg;
   }, '');
