@@ -6,6 +6,7 @@ export interface HTMLAttrs {
   id?: string;
   class?: string | string[] | {[className: string]: boolean};
   style?: {[styleProp: string]: string | number};
+  selected?: boolean;
 }
 
 interface HTMLAttrItem {
@@ -33,7 +34,11 @@ export function populateAttributes(attributes: HTMLAttrs): string {
     attributesStrings.push(`style="${styleAttrs.join('; ')}"`);
   }
 
-  const attrsToOmit = ['id', 'class', 'style'];
+  if (attributes.selected === true) {
+    attributesStrings.push('selected');
+  }
+
+  const attrsToOmit = ['id', 'class', 'style', 'selected'];
 
   const initHTMLArray: HTMLAttrItem[] = [];
 

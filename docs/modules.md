@@ -7,10 +7,12 @@
 ### Interfaces
 
 - [HTMLAttrs](interfaces/htmlattrs.md)
+- [Selector](interfaces/selector.md)
 
 ### Functions
 
 - [h](modules.md#h)
+- [joinArrayOfH](modules.md#joinarrayofh)
 - [parseSelector](modules.md#parseselector)
 
 ## Functions
@@ -37,13 +39,37 @@ Name | Type | Description |
 
 The resulting HTML string
 
-Defined in: [index.ts:18](https://github.com/alrico88/hachescript/blob/6325b78/src/index.ts#L18)
+Defined in: [index.ts:18](https://github.com/alrico88/hachescript/blob/1b10fdc/src/index.ts#L18)
+
+___
+
+### joinArrayOfH
+
+▸ **joinArrayOfH**(`array`: *string*[], `separator?`: *string*): *string*
+
+Joins an array of hachescript strings together
+An Array.join shorthand
+
+**`export`** 
+
+#### Parameters:
+
+Name | Type | Default value | Description |
+:------ | :------ | :------ | :------ |
+`array` | *string*[] | - | The array of hachescript strings, or any string, to join together   |
+`separator` | *string* | '' | - |
+
+**Returns:** *string*
+
+The joined string
+
+Defined in: [index.ts:47](https://github.com/alrico88/hachescript/blob/1b10fdc/src/index.ts#L47)
 
 ___
 
 ### parseSelector
 
-▸ **parseSelector**(`selector`: *string*, `attributes?`: [*HTMLAttrs*](interfaces/htmlattrs.md)): Selector
+▸ **parseSelector**(`selector`: *string*, `attributes?`: [*HTMLAttrs*](interfaces/htmlattrs.md)): [*Selector*](interfaces/selector.md)
 
 Parses a selector into tag, id, and classNames
 
@@ -56,6 +82,6 @@ Name | Type | Description |
 `selector` | *string* | The HTML selector. Supports tag, #id, and .class.names   |
 `attributes` | [*HTMLAttrs*](interfaces/htmlattrs.md) | - |
 
-**Returns:** Selector
+**Returns:** [*Selector*](interfaces/selector.md)
 
-Defined in: [modules/parser.ts:97](https://github.com/alrico88/hachescript/blob/6325b78/src/modules/parser.ts#L97)
+Defined in: [modules/parser.ts:97](https://github.com/alrico88/hachescript/blob/1b10fdc/src/modules/parser.ts#L97)

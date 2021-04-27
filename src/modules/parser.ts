@@ -1,7 +1,7 @@
 import {HTMLAttrs} from './attributes';
 import {isArray, isObject, isString} from './types';
 
-interface Selector {
+export interface Selector {
   tag: string;
   id?: string;
   classNames?: string[];

@@ -31,6 +31,19 @@ export function h(selector: string, content: string | string[], attributes: HTML
   return `<${cleanMarkup}${closeBeginningTag}${formattedContent}${closeEndingTag}`;
 }
 
-export {parseSelector} from './modules/parser';
+export {parseSelector, Selector} from './modules/parser';
 
 export {HTMLAttrs};
+
+/**
+ * Joins an array of hachescript strings together
+ * An Array.join shorthand
+ *
+ * @export
+ * @param {string[]} array The array of hachescript strings, or any string, to join together
+ * @param {string} [separator=''] The value to join by. By default an empty string ''
+ * @return {string} The joined string
+ */
+ export function joinArrayOfH(array: string[], separator = ''): string {
+  return array.join(separator);
+}

@@ -1,5 +1,7 @@
 # hachescript
 
+![](https://badgen.net/github/release/alrico88/hachescript) ![](https://badgen.net/bundlephobia/min/hachescript) ![](https://badgen.net/travis/alrico88/hachescript/master) ![](https://badgen.net/coveralls/c/github/alrico88/hachescript/master)
+
 Create HTML strings using JavaScript, anywhere. Like [Hyperscript](https://github.com/hyperhype/hyperscript) but faster, and without the overhead of creating actual HTML elements.
 
 ## Installation

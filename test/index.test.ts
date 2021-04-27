@@ -1,4 +1,4 @@
-import {h, parseSelector} from '../src';
+import {h, joinArrayOfH, parseSelector} from '../src';
 
 const tagWithIdAndClasses = 'div#myCoolId.myClass.myOtherClass';
 const tagWithClass = 'span.text-muted';
@@ -125,5 +125,11 @@ describe('Test content parsing', () => {
 
   test('Deep nesting should work as expected', () => {
     expect(h('div', h('div', h('img', '', {src: 'cat.png'})))).toBe('<div><div><img src="cat.png"/></div></div>');
+  });
+});
+
+describe('Test hachescript joiner', () => {
+  test('String content should work as expected', () => {
+    expect(joinArrayOfH([h('div', 'hello'), h('div', 'world')])).toBe('<div>hello</div><div>world</div>');
   });
 });
