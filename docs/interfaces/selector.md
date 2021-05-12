@@ -16,7 +16,7 @@
 
 • `Optional` **classNames**: *string*[]
 
-Defined in: [modules/parser.ts:7](https://github.com/alrico88/hachescript/blob/1b10fdc/src/modules/parser.ts#L7)
+Defined in: [modules/parser.ts:7](https://github.com/alrico88/hachescript/blob/841b568/src/modules/parser.ts#L7)
 
 ___
 
@@ -24,7 +24,7 @@ ___
 
 • `Optional` **id**: *string*
 
-Defined in: [modules/parser.ts:6](https://github.com/alrico88/hachescript/blob/1b10fdc/src/modules/parser.ts#L6)
+Defined in: [modules/parser.ts:6](https://github.com/alrico88/hachescript/blob/841b568/src/modules/parser.ts#L6)
 
 ___
 
@@ -32,4 +32,4 @@ ___
 
 • **tag**: *string*
 
-Defined in: [modules/parser.ts:5](https://github.com/alrico88/hachescript/blob/1b10fdc/src/modules/parser.ts#L5)
+Defined in: [modules/parser.ts:5](https://github.com/alrico88/hachescript/blob/841b568/src/modules/parser.ts#L5)
