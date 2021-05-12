@@ -105,8 +105,9 @@ describe('Test attributes parsing', () => {
   test('Boolean attributes should only have the attribute and no value', () => {
     expect(h('option', 'hello world', {
       checked: true,
+      hidden: true,
       value: 'hello',
-    })).toBe('<option checked value="hello">hello world</option>');
+    })).toBe('<option checked hidden value="hello">hello world</option>');
   });
 
   test('If no attributes are provided, parsing still works', () => {

@@ -1,12 +1,64 @@
 import {paramCase} from 'param-case';
 import {isBoolean} from './types';
 
+const booleanAttributes = [
+  'allowfullscreen',
+  'allowpaymentrequest',
+  'async',
+  'autofocus',
+  'autoplay',
+  'checked',
+  'controls',
+  'default',
+  'disabled',
+  'formnovalidate',
+  'hidden',
+  'ismap',
+  'itemscope',
+  'loop',
+  'multiple',
+  'muted',
+  'nomodule',
+  'novalidate',
+  'open',
+  'playsinline',
+  'readonly',
+  'required',
+  'reversed',
+  'selected',
+  'truespeed',
+];
+
 export interface HTMLAttrs {
   [prop: string]: any;
   id?: string;
   class?: string | string[] | {[className: string]: boolean};
   style?: {[styleProp: string]: string | number};
+  allowfullscreen?: boolean;
+  allowpaymentrequest?: boolean;
+  async?: boolean;
+  autofocus?: boolean;
+  autoplay?: boolean;
+  checked?: boolean;
+  controls?: boolean;
+  default?: boolean;
+  disabled?: boolean;
+  formnovalidate?: boolean;
+  hidden?: boolean;
+  ismap?: boolean;
+  itemscope?: boolean;
+  loop?: boolean;
+  multiple?: boolean;
+  muted?: boolean;
+  nomodule?: boolean;
+  novalidate?: boolean;
+  open?: boolean;
+  playsinline?: boolean;
+  readonly?: boolean;
+  required?: boolean;
+  reversed?: boolean;
   selected?: boolean;
+  truespeed?: boolean;
 }
 
 interface HTMLAttrItem {
@@ -34,11 +86,13 @@ export function populateAttributes(attributes: HTMLAttrs): string {
     attributesStrings.push(`style="${styleAttrs.join('; ')}"`);
   }
 
-  if (attributes.selected === true) {
-    attributesStrings.push('selected');
-  }
+  booleanAttributes.forEach((attr) => {
+    if (attributes[attr] === true) {
+      attributesStrings.push(attr);
+    }
+  });
 
-  const attrsToOmit = ['id', 'class', 'style', 'selected'];
+  const attrsToOmit = ['id', 'class', 'style', ...booleanAttributes];
 
   const initHTMLArray: HTMLAttrItem[] = [];
 
